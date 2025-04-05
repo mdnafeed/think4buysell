@@ -212,6 +212,12 @@
     color: white;
     font-weight: bold;
 }
+
+.card-short-information{
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
 /* CARD SWIPER */
 
 /* Footer */
@@ -243,6 +249,9 @@
 }
 
 /* Social media icons */
+.social-icons{
+    display: flex;
+}
 .social-icons a {
     font-size: 1.2rem;
     color: #000;
