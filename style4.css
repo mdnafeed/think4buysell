@@ -285,3 +285,497 @@
 /*
 END: Footer
 */
+
+/* START: Subscription */
+/* Subscription section styling */
+.subscription-section {
+    position: relative;
+    background: url('https://via.placeholder.com/1920x300') no-repeat center center/cover; /* Replace with actual image */
+    height: 300px; /* Match the height of the image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.subscription-container {
+    background-color: #007bff; /* Blue background */
+    color: #fff;
+    padding: 30px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 900px; /* Match the width in the image */
+    width: 100%;
+    text-align: center;
+}
+
+.subscription-container h2 {
+    font-size: 2rem; /* Match the heading size */
+    font-weight: 700; /* Bold */
+    margin-bottom: 10px;
+}
+
+.subscription-container p {
+    font-size: 1rem; /* Match the subheading size */
+    font-weight: 400; /* Regular weight */
+    margin-bottom: 20px;
+    color: #e9ecef; /* Lighter gray for subheading */
+}
+
+/* Form styling */
+.subscription-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Spacing between input and button */
+}
+
+.subscription-form .form-control {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    width: 250px; /* Match the input width in the image */
+    background-color: #fff;
+    color: #000;
+}
+
+.subscription-form .btn {
+    background-color: #007bff; /* Blue button */
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.subscription-form .btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+/* END: Subscription */
+
+/* Stepper container */
+.stepper-form {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress bar */
+.progress {
+    height: 10px;
+    margin-bottom: 20px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    background-color: #007bff;
+}
+
+/* Step indicators */
+.step-indicator {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.step {
+    text-align: center;
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.step .step-number {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #e9ecef;
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.step.active .step-number {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.step.completed .step-number {
+    background-color: #28a745; /* Green for completed steps */
+    color: #fff;
+}
+
+.step .step-title {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.step.active .step-title {
+    color: #007bff;
+}
+
+/* Form steps */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+/* Validation feedback */
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+.form-control.is-valid {
+    border-color: #28a745;
+}
+
+.invalid-feedback {
+    font-size: 0.875rem;
+    color: #dc3545;
+}
+
+li{
+    list-style: none !important;
+}
+
+.btn-login{
+    color: white;
+    border-radius: 6px;
+    background-color: #007bff;
+}
+
+/* Buttons */
+.stepper-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-prev {
+    background-color: #6c757d;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.btn-prev:hover {
+    background-color: #5a6268;
+}
+
+.btn-next, .btn-submit {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-next:hover, .btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Disable next button when invalid */
+.btn-next:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .stepper-form {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .step-indicator {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step {
+        flex: none;
+        margin-bottom: 15px;
+    }
+
+    .step .step-number {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 0.9rem;
+    }
+
+    .step .step-title {
+        font-size: 0.8rem;
+    }
+
+    .subscription-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .subscription-container p {
+        font-size: 0.9rem;
+    }
+
+    .form-control, .btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+
+    .stepper-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .btn-prev, .btn-next, .btn-submit {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .stepper-form {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .step-indicator {
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 10px;
+    }
+
+    .step {
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+
+    .step:last-child {
+        margin-right: 0;
+    }
+
+    .subscription-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .subscription-container p {
+        font-size: 0.8rem;
+    }
+
+    .form-control {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .subscription-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Listing Screen */
+/* Property listing container styling */
+.property-listing {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* max-width: 600px; */
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.property-image {
+    position: relative;
+    width: 20%;
+    /* height: 100px; */
+    display: inline-block;
+    overflow: hidden;
+}
+
+.property-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #000;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.like-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #6c757d;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.like-icon:hover {
+    color: #dc3545;
+}
+.listing-card-action{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.property-content {
+    padding: 8px;
+    width: 79%;
+    display: inline-block
+}
+
+.property-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.price-tag {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #dc3545; /* Red color for price */
+}
+
+.property-subtitle {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.spec-item i {
+    font-size: 0.8rem;
+}
+
+.property-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0px;
+}
+
+.posted-date {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+.agent-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.agent-badge {
+    background-color: #ffcc00; /* Yellow badge */
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.agent-name {
+    font-weight: 500;
+    color: #000;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-contact, .btn-phone {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-contact {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+.btn-contact:hover {
+    background-color: #0056b3;
+}
+
+.btn-phone {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+}
+
+.btn-phone:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .property-listing {
+        margin: 10px;
+    }
+
+    .property-image {
+        height: 150px;
+    }
+
+    .property-title {
+        font-size: 1rem;
+    }
+
+    .price-tag {
+        font-size: 1rem;
+    }
+
+    .property-subtitle, .property-text, .spec-row, .agent-info, .posted-date {
+        font-size: 0.8rem;
+    }
+
+    .action-buttons .btn-contact, .action-buttons .btn-phone {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+}
+/* Listing Screen */
