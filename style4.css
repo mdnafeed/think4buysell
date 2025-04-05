@@ -1,0 +1,278 @@
+
+ /* Apply Poppins font to the entire navbar */
+ body, .navbar, .navbar-brand, .nav-link, .btn, .location {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #fff !important; /* White background */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow to match the faint line */
+    padding: 10px 0; /* Adjust padding for height */
+}
+
+.navbar-brand {
+    color: #007bff !important; /* Blue color for the logo */
+    font-weight: 600; /* Slightly bold */
+    font-size: 1.5rem; /* Match the logo size */
+}
+
+.navbar-nav .nav-link {
+    color: #000 !important; /* Black color for nav links */
+    margin-right: 25px; /* Spacing between nav links */
+    font-weight: 400; /* Regular weight for nav links */
+    font-size: 1rem; /* Match font size */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff !important; /* Hover effect for nav links */
+}
+
+.btn-login {
+    background-color: transparent;
+    border: 1px solid #007bff;
+    color: #007bff;
+    margin-right: 15px; /* Spacing between buttons */
+    font-weight: 500;
+    padding: 5px 15px; /* Adjust button size */
+}
+
+.btn-login:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-post-property {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 5px 15px; /* Adjust button size */
+}
+
+.btn-post-property:hover {
+    background-color: #0056b3;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    color: #000;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.location i {
+    margin-left: 5px;
+    font-size: 0.9rem;
+    color: #000;
+}
+
+
+/* Search bar */
+
+/* Hero section styling */
+.hero-section {
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover; /* Replace with actual image */
+    height: 600px; /* Adjust height to match the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem; /* Match the large heading size */
+    font-weight: 700; /* Bold */
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.25rem; /* Match the subheading size */
+    font-weight: 400; /* Regular weight */
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* Search bar styling */
+.search-bar {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 100%;
+    max-width: 900px; /* Match the width in the image */
+    padding: 0;
+}
+
+/* Tabs styling */
+.nav-tabs {
+    border-bottom: none; /* Remove default border */
+    justify-content: center;
+}
+
+.nav-tabs .nav-link {
+    color: #000;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.nav-tabs .nav-link:hover {
+    background-color: #e9ecef;
+    color: #000;
+}
+
+/* Form styling */
+.search-form {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.search-form .form-select {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6c757d; /* Placeholder color */
+    margin-right: 10px;
+    flex: 1;
+}
+
+.search-form .btn-get-started {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.search-form .btn-get-started:hover {
+    background-color: #0056b3;
+}
+/* CARD SWIPER */
+.swiper {
+    width: 100%;
+    padding: 20px 0;
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+.card img {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+.swiper-button-next, .swiper-button-prev {
+    color: #007bff;
+}
+
+/* Custom Swiper Navigation Buttons */
+.swiper-button-next, .swiper-button-prev {
+    background-color: #007bff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+/* CARD SWIPER */
+
+/* Footer */
+/* Footer styling */
+.footer {
+    background-color: #fff;
+    padding: 40px 0;
+    border-top: 1px solid #e9ecef; /* Subtle top border */
+}
+
+.footer h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.footer p, .footer a {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #6c757d; /* Gray color for text and links */
+    text-decoration: none;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.footer a:hover {
+    color: #007bff; /* Blue hover effect */
+}
+
+/* Social media icons */
+.social-icons a {
+    font-size: 1.2rem;
+    color: #000;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
+/* Footer bottom */
+.footer-bottom {
+    border-top: 1px solid #e9ecef;
+    padding: 15px 0;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+.footer-bottom a {
+    color: #6c757d;
+    margin-left: 20px;
+}
+
+.footer-bottom a:hover {
+    color: #007bff;
+}
+.top-footer{
+    display: flex;
+}
+/*
+END: Footer
+*/

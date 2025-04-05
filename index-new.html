@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MagicBricks Navbar</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .navbar {
+            background-color: #d71a28;
+        }
+
+        /* .navbar-nav .nav-link {
+            color: white !important;
+        } */
+        .dropdown-menu {
+            width: 300px;
+        }
+
+        .dropdown-header {
+            font-weight: bold;
+            font-size: 14px;
+            padding: 6px;
+            border-bottom: 1px solid #e6e4e4;
+        }
+        .dropdown-header:last-child{
+            border-bottom: none;
+        }
+        .dropdown-item {
+            padding: 6px;
+            border-bottom: 1px solid #e6e4e4;
+        }
+        
+
+        .post-property {
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            border-radius: 20px;
+            padding: 6px 12px;
+        }
+
+        .free-badge {
+            background-color: #ffcc00;
+            color: black;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            margin-left: 5px;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #1c1e22;
+            color: white;
+            padding: 40px 0;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #b0b3b8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .footer a:hover {
+            color: #ffffff;
+        }
+        .footer h5 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .footer .social-icons a {
+            color: white;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        .footer .app-buttons img {
+            width: 150px;
+            margin-top: 10px;
+        }
+        .footer .copyright {
+            font-size: 12px;
+            margin-top: 20px;
+        }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #6c757d;
+            color: white;
+            border-radius: 50%;
+            padding: 10px 12px;
+            cursor: pointer;
+        }
+
+        /* START: Property Slider */
+        .swiper-container {
+            width: 100%;
+            max-width: 100vw; /* Prevents overflow */
+            overflow: hidden;
+        }
+        .swiper-wrapper {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #00bcd4;
+            margin: 5px auto;
+        }
+        .swiper-container {
+            width: 90%;
+            padding-bottom: 40px;
+            margin: auto;
+        }
+        .swiper-slide {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .property-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .property-info {
+            padding: 15px;
+        }
+        .property-price {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .property-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .property-location {
+            font-size: 14px;
+            color: #666;
+        }
+        .property-type {
+            font-size: 14px;
+            color: #777;
+        }
+        .property-marketed {
+            font-size: 12px;
+            color: #999;
+            margin-top: 8px;
+        }
+        /* Navigation Arrows */
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: #00bcd4;
+        }
+        /* END: Property Slider */
+
+
+        /* START: LISTING CARD */
+        .listing-card {
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background: #fff;
+        }
+        .listing-image {
+            position: relative;
+        }
+        .listing-image img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .posted-date {
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+        .platinum-badge {
+            font-size: 12px;
+            color: red;
+            font-weight: bold;
+        }
+        .listing-details h5 {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .listing-price {
+            color: red;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .agent-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .contact-buttons .btn {
+            font-size: 14px;
+        }
+        /* END: LISTING CARD */
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex justify-content-between px-5">
+
+            <!-- Left Side: Logo & City Dropdown -->
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand text-white fw-bold" href="#">Think4buysell</a>
+
+                <!-- City Dropdown -->
+                <div class="dropdown ms-3">
+                    <button class="btn text-white dropdown-toggle" type="button" id="cityDropdown"
+                        data-bs-toggle="dropdown">
+                        Bangalore
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">Nearby Cities</li>
+                        <li><a class="dropdown-item" href="#">Bangalore - East</a></li>
+                        <li><a class="dropdown-item" href="#">Bangalore - South</a></li>
+                        <li class="dropdown-header">Popular Cities</li>
+                        <li><a class="dropdown-item" href="#">Mumbai</a></li>
+                        <li><a class="dropdown-item" href="#">Hyderabad</a></li>
+                        <li><a class="dropdown-item" href="#">Pune</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Side: MB Prime, Login, Post Property -->
+            <div class="d-flex align-items-center">
+
+                <!-- MB Prime Dropdown -->
+                <div class="dropdown me-3">
+                    <button class="btn text-white dropdown-toggle" type="button" id="primeDropdown"
+                        data-bs-toggle="dropdown">
+                        MB Prime
+                    </button>
+                    <ul class="dropdown-menu p-3 text-center">
+                        <li>
+                            <div class="p-3 bg-dark text-white">
+                                <h5><span class="text-warning">MB Prime</span></h5>
+                                <p class="mb-1">Pay Zero Commission | Save Time & Money</p>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="text-success mt-2">✔ Contact up to 30 Owners directly</p>
+                        </li>
+                        <li>
+                            <p class="text-success">✔ Access to Prime Exclusive Properties</p>
+                        </li>
+                        <li><button class="btn btn-danger w-100">Join Now</button></li>
+                    </ul>
+                </div>
+
+                <!-- Login Dropdown -->
+                <div class="dropdown me-3">
+                    <button class="btn text-white dropdown-toggle" type="button" id="loginDropdown"
+                        data-bs-toggle="dropdown">
+                        Login
+                    </button>
+                    <ul class="dropdown-menu p-3">
+                        <li class="dropdown-header">My Activity</li>
+                        <li><a class="dropdown-item" href="#">Requested Properties</a></li>
+                        <li><a class="dropdown-item" href="#">MagicDiary</a></li>
+                        <li><a class="dropdown-item" href="#">Viewed Properties</a></li>
+                        <li class="dropdown-header">Profile</li>
+                        <li><a class="dropdown-item" href="#">My Profile</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><button class="btn btn-danger w-100">Login</button></li>
+                        <li class="text-center mt-2"><a href="#" class="text-danger">Sign Up</a></li>
+                    </ul>
+                </div>
+
+                <!-- Post Property Button -->
+                <button class="btn post-property">
+                    Post Property <span class="free-badge">FREE</span>
+                </button>
+
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg bg-white border">
+        <div class="container-fluid justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="buyDropdown" data-bs-toggle="dropdown">
+                        Buy
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Apartments</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="rentDropdown" data-bs-toggle="dropdown">
+                        Rent
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Houses</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="sellDropdown" data-bs-toggle="dropdown">
+                        Sell
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Post Ad</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="loansDropdown" data-bs-toggle="dropdown">
+                        Home Loans
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">EMI Calculator</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Home Interiors
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="adviceDropdown" data-bs-toggle="dropdown">
+                        MB Advice <span class="new-badge">NEW</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Buying Tips</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="helpDropdown" data-bs-toggle="dropdown">
+                        Help
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">FAQs</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br><br><br>
+    <!-- START: PROPERTY SLIDER -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- Property 1 -->
+            <div class="swiper-slide">
+                <img src="https://teja10.kuikr.com//r1/20230920/ak_1000_1332328345-1695202273_300x300.jpeg" class="property-image" alt="Property 1">
+                <div class="property-info">
+                    <div class="property-price">₹1.50 Crores To 2.02 Crores</div>
+                    <div class="property-title">Melrose</div>
+                    <div class="property-location">in Budigere Cross, Bangalore</div>
+                    <div class="property-type">Plot</div>
+                    <div class="property-marketed">Marketed By: Ark Global Estates</div>
+                </div>
+            </div>
+            
+            <!-- Property 2 -->
+            <div class="swiper-slide">
+                <img src="https://teja10.kuikr.com//r1/20230920/ak_1000_1332328345-1695202273_300x300.jpeg" class="property-image" alt="Property 2">
+                <div class="property-info">
+                    <div class="property-price">₹80.67 Lakhs To 1.49 Crore</div>
+                    <div class="property-title">SNN Raj High Gardens</div>
+                    <div class="property-location">in Chandapura, Bangalore</div>
+                    <div class="property-type">1, 1.5, 2, 2.5, 3 BHK Apartment</div>
+                    <div class="property-marketed">Marketed By: SNN Raj Corp</div>
+                </div>
+            </div>
+
+            <!-- Property 3 -->
+            <div class="swiper-slide">
+                <img src="https://teja10.kuikr.com//r1/20230920/ak_1000_1332328345-1695202273_300x300.jpeg" class="property-image" alt="Property 3">
+                <div class="property-info">
+                    <div class="property-price">₹51.31 Lakhs To 64.63 Lakhs</div>
+                    <div class="property-title">Sattva Ashraya</div>
+                    <div class="property-location">in Bidadi, Bangalore</div>
+                    <div class="property-type">2, 3 BHK Apartment</div>
+                    <div class="property-marketed">Marketed By: Sattva</div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <img src="https://teja10.kuikr.com//r1/20230920/ak_1000_1332328345-1695202273_300x300.jpeg" class="property-image" alt="Property 3">
+                <div class="property-info">
+                    <div class="property-price">₹51.31 Lakhs To 64.63 Lakhs</div>
+                    <div class="property-title">Sattva Ashraya</div>
+                    <div class="property-location">in Bidadi, Bangalore</div>
+                    <div class="property-type">2, 3 BHK Apartment</div>
+                    <div class="property-marketed">Marketed By: Sattva</div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <img src="https://teja10.kuikr.com//r1/20230920/ak_1000_1332328345-1695202273_300x300.jpeg" class="property-image" alt="Property 3">
+                <div class="property-info">
+                    <div class="property-price">₹51.31 Lakhs To 64.63 Lakhs</div>
+                    <div class="property-title">Sattva Ashraya</div>
+                    <div class="property-location">in Bidadi, Bangalore</div>
+                    <div class="property-type">2, 3 BHK Apartment</div>
+                    <div class="property-marketed">Marketed By: Sattva</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <!-- END: PROPERTY SLIDER -->
+    <br><br><br>
+
+    <!-- START: LISTING CARD -->
+    <div class="container mt-4">
+        <div class="card listing-card p-3 col-md-9">
+            <div class="row g-3">
+                <!-- Left Image Section -->
+                <div class="col-md-3">
+                    <div class="listing-image">
+                        <img src="https://dyimg2.realestateindia.com/prop_images/12537/1351437_13-350x350.jpeg" alt="Listing Image">
+                        <div class="posted-date">Posted on: 15 Mar, 2025</div>
+                    </div>
+                </div>
+    
+                <!-- Listing Details -->
+                <div class="col-md-5">
+                    <div class="listing-details">
+                        <h5>1951 Sq.ft. Residential Land / Plots for Sale in Hoskote, Bangalore</h5>
+                        <p class="mb-1"><strong>Plot / Land Area:</strong> 1951 sq.ft</p>
+                        <p class="mb-1"><strong>Ownership:</strong> Freehold</p>
+                        <p class="mb-1"><strong>Location:</strong> Hoskote, Bangalore</p>
+                        <p class="mb-1"><strong>Sale Type:</strong> New</p>
+                        <p class="text-muted">Cropped Residential Land available at best price in Hoskote...</p>
+                    </div>
+                </div>
+    
+                <!-- Price and Contact -->
+                <div class="col-md-4 d-flex flex-column align-items-end">
+                    <div class="listing-price">₹ 97.55 Lac</div>
+                    <div class="agent-info d-flex align-items-center mt-2">
+                        <img src="https://dyimg2.realestateindia.com/comp_logo/12537_41132-100x100.png" alt="Agent">
+                        <div class="ms-2">
+                            <p class="mb-0">Square Feet Realtors</p>
+                            <small class="platinum-badge">🔴 Platinum Member</small>
+                        </div>
+                    </div>
+                    <div class="contact-buttons mt-3">
+                        <button class="btn btn-outline-primary btn-sm">📩 Contact Agent</button>
+                        <button class="btn btn-primary btn-sm">📞 View Phone No.</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: LISTING CARD -->
+    <br><br><br>
+    <!-- START: Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: 99acres Links -->
+                <div class="col-md-3">
+                    <h5>99acres</h5>
+                    <a href="#">Mobile Apps</a>
+                    <a href="#">Our Services</a>
+                    <a href="#">Price Trends</a>
+                    <a href="#">Post your Property</a>
+                    <a href="#">Real Estate Investments</a>
+                    <a href="#">Builders in India</a>
+                    <a href="#">Area Converter</a>
+                    <a href="#">Articles</a>
+                    <a href="#">Rent Receipt</a>
+                    <a href="#">Customer Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+    
+                <!-- Column 2: Company Info -->
+                <div class="col-md-3">
+                    <h5>Company</h5>
+                    <a href="#">About us</a>
+                    <a href="#">Contact us</a>
+                    <a href="#">Careers with us</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Request Info</a>
+                    <a href="#">Feedback</a>
+                    <a href="#">Report a problem</a>
+                    <a href="#">Testimonials</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Summons/Notices</a>
+                    <a href="#">Grievances</a>
+                    <a href="#">Safety Guide</a>
+                </div>
+    
+                <!-- Column 3: Our Partners -->
+                <div class="col-md-3">
+                    <h5>Our Partners</h5>
+                    <a href="#">Naukri.com - Jobs in India</a>
+                    <a href="#">Naukrigulf.com - Jobs in Middle East</a>
+                    <a href="#">Jeevansathi.com - Matrimonials</a>
+                    <a href="#">Brijj.com - Professional Networking</a>
+                    <a href="#">Shiksha.com - Education Career Info</a>
+                    <a href="#">Policybazaar.com - Insurance India</a>
+                    <a href="#">PaisaBazaar.com</a>
+                    <a href="#">AmbitionBox.com</a>
+                    <a href="#">FirstNaukri.com - A Jobsite for Campus Hiring</a>
+                    <a href="#">Jobhai.com - Find Jobs Near You</a>
+                    <a href="#">Techminis.com - Tech News</a>
+                </div>
+    
+                <!-- Column 4: Contact, Social Media, and Apps -->
+                <div class="col-md-3">
+                    <h5>Contact Us</h5>
+                    <p>Toll Free - 1800 41 99099</p>
+                    <p>9:30 AM to 6:30 PM (Mon-Sun)</p>
+                    <p>Email - <a href="mailto:feedback@99acres.com">feedback@99acres.com</a></p>
+    
+                    <h5>Connect with us</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+    
+                    <h5>Download the App</h5>
+                    <div class="app-buttons">
+                        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"></a>
+                        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png" alt="App Store" style="width: 150px;"></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="text-center copyright">
+                <p>All trademarks are the property of their respective owners. All rights reserved - Info Edge (India) Ltd.</p>
+                <p>A naukri.com group venture</p>
+            </div>
+        </div>
+    </footer>
+     <!-- END: Footer -->
+</body>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    loop: true,  
+    loopAdditionalSlides: 4, // Reduce duplicate slides
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
+});
+</script>
+</html>
